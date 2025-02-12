@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.js %'}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="hello">Привет! Как твое состояние?</div>
+
+    <div class="table" id="state-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Состояние</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if user_state %}
+                <tr>
+                    <td>{ { user_state.date } }</td>
+                    <td>{ { user_state.state } }</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td>Сегодня</td>
+                    <td>Не заполнено</td>
+                </tr>
+                { % endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{% static 'script.js %'}"></script>
+</body>
+</html>
